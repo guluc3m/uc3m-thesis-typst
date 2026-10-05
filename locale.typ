@@ -18,11 +18,15 @@
 
 #let CC-LICENSE = (
   es: [
-    Esta obra se encuentra sujeta a la licencia #link("https://creativecommons.org/licenses/by-nc-nd/4.0/")[Creative Commons\ *Reconocimiento -- No Comercial -- Sin Derivadas* 4.0
+    Esta obra se encuentra sujeta a la licencia #link(
+      "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+    )[Creative Commons\ *Reconocimiento -- No Comercial -- Sin Derivadas* 4.0
       International]
   ],
   en: [
-    This work is licensed under #link("https://creativecommons.org/licenses/by-nc-nd/4.0/")[Creative Commons\ *Attribution -- Non Commercial -- No Derivatives* 4.0
+    This work is licensed under #link(
+      "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+    )[Creative Commons\ *Attribution -- Non Commercial -- No Derivatives* 4.0
       International]
   ],
 )
@@ -120,6 +124,10 @@
     es: "Sí",
     en: "Yes",
   ),
+  clean: (
+    es: "Sí",
+    en: "Yes",
+  ),
   strict: (
     es: "SI",
     en: "YES",
@@ -128,6 +136,10 @@
 
 #let NEGATION = (
   fancy: (
+    es: "No",
+    en: "No",
+  ),
+  clean: (
     es: "No",
     en: "No",
   ),
@@ -176,9 +188,9 @@
   questions: (
     confidential: (
       prompt: (
-        es: [En mi interacción con herramientas de Inteligencia Artificial Generativa he facilitado
-          *datos de carácter confidencial* contando siempre con la debida
-          autorización de los interesados.],
+        es: [En mi interacción con herramientas de Inteligencia Artificial
+          Generativa he facilitado *datos de carácter confidencial* contando
+          siempre con la debida autorización de los interesados.],
         en: [In my interactions with Generative AI tools, I have provided
           *confidential data*, always with the appropriate authorization of the
           data subjects.],
@@ -196,17 +208,17 @@
     ),
     copyright: (
       prompt: (
-        es: [En mi interacción con herramientas de Inteligencia Artificial Generativa he facilitado
-          *materiales protegidos por derechos de autoría* contando con
-          la autorización respectiva.],
+        es: [En mi interacción con herramientas de Inteligencia Artificial
+          Generativa he facilitado *materiales protegidos por derechos de
+          autoría* contando con la autorización respectiva.],
         en: [In my interaction with Generative AI tools, I have submitted
           *copyrighted materials* with the permission of those concerned.],
       ),
       answers: (
         yes: (
           es: [Sí, he usado estos materiales con autorización de los titulares
-            de derechos de autor; o bien sin ella porque se ajustan a una de
-            las excepciones o límites que permite la ley:
+            de derechos de autor; o bien sin ella porque se ajustan a una de las
+            excepciones o límites que permite la ley:
             - Obra en dominio público
             - Obra licenciada (licencias Creative Commons)
             - Uso de fragmentos con fines de investigación (derecho de cita)
@@ -227,20 +239,23 @@
     ),
     personal: (
       prompt: (
-        es: [En mi interacción con herramientas de Inteligencia Artificial Generativa he facilitado
-          *datos de carácter personal* con la debida autorización de los
-          interesados.],
+        es: [En mi interacción con herramientas de Inteligencia Artificial
+          Generativa he facilitado *datos de carácter personal* con la debida
+          autorización de los interesados.],
         en: [In my interaction with Generative AI tools, I have submitted
           *personal data* with the consent of the data subjects.],
       ),
       answers: (
         yes: (
           es: [Sí, he usado estos datos con autorización de los interesados y
-            conforme a las instrucciones contenidas en la #link("https://docs.google.com/document/d/1YghVxFwo8a1VqdfnvJiZzlmAkfYepbDmD4g3hTOW9ro/edit?tab=t.0")[guía aprobada por la
-              Universidad].],
+            conforme a las instrucciones contenidas en la #link(
+              "https://docs.google.com/document/d/1YghVxFwo8a1VqdfnvJiZzlmAkfYepbDmD4g3hTOW9ro/edit?tab=t.0",
+            )[guía aprobada por la Universidad].],
           en: [Yes, I have used this data with the authorization of the
             interested parties and in accordance with the instructions contained
-            in the #link("https://docs.google.com/document/d/1YghVxFwo8a1VqdfnvJiZzlmAkfYepbDmD4g3hTOW9ro/edit?pli=1&tab=t.0")[guide approved by the University].],
+            in the #link(
+              "https://docs.google.com/document/d/1YghVxFwo8a1VqdfnvJiZzlmAkfYepbDmD4g3hTOW9ro/edit?pli=1&tab=t.0",
+            )[guide approved by the University].],
         ),
         no: (
           es: [No, no he usado datos de carácter personal.],
@@ -250,8 +265,13 @@
     ),
     tos: (
       prompt: (
-        es: [Mi utilización de la herramienta de Inteligencia Artificial Generativa ha *respetado sus términos de uso*, así como los principios éticos esenciales, no orientándola de manera maliciosa a obtener un resultado inapropiado para el trabajo presentado.],
-        en: [My use of the Generative AI tool has *respected its terms of use*, as well as the essential ethical principles, not being maliciously oriented to obtain an inappropriate result for the work presented.],
+        es: [Mi utilización de la herramienta de Inteligencia Artificial
+          Generativa ha *respetado sus términos de uso*, así como los principios
+          éticos esenciales, no orientándola de manera maliciosa a obtener un
+          resultado inapropiado para el trabajo presentado.],
+        en: [My use of the Generative AI tool has *respected its terms of use*,
+          as well as the essential ethical principles, not being maliciously
+          oriented to obtain an inappropriate result for the work presented.],
       ),
       answers: (
         yes: (
