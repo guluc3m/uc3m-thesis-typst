@@ -39,7 +39,7 @@
 
 #let images_example(style) = {
   let images = ("cover", "chapter").map(section => image(
-    "report_" + style + "_" + section + ".png",
+    "img/report-" + style + "-" + section + ".png",
     width: 92%,
   ))
 
@@ -57,7 +57,7 @@
 #align(center)[
   #text(size: 26pt, weight: "bold")[uc3m-thesis-ieee]
   \
-  #text(size: 13pt, fill: luma(80))[Package Documentation — v#package_version]
+  #text(size: 13pt, fill: luma(80))[Template Documentation — v#package_version]
   #v(0.4em)
   #text(
     size: 10pt,
@@ -503,11 +503,11 @@ A clean, minimal style inspired by #link(
 
 Strictly follows the #link("https://uc3m.libguides.com/en/TFG/writing")[UC3M
   library guidelines]:
-- Times New Roman font, 12pt
 - Centered uppercase chapter headings
 - Page numbers in the footer (Roman numerals in front matter, Arabic in body)
 - No decorative elements
 - Double-sided layout is *not* permitted with this style
+- Times New Roman font, 12pt
 
 // Insert a screenshot of the strict style here
 #images_example("strict")
@@ -518,6 +518,8 @@ Strictly follows the #link("https://uc3m.libguides.com/en/TFG/writing")[UC3M
 
 #line(length: 100%, stroke: 0.5pt)
 
+
+#pagebreak()
 
 = API Reference
 
