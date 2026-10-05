@@ -20,6 +20,7 @@
 /// - accent-color (color): Accent color for the page.
 /// - double-sided (bool): Whether to use double-sided pages.
 /// - title-font (str, auto): Font of the title.
+/// - font-size (lenght): Font size.
 /// - logo-type (str): Type of logo (`"old"` or "`new"`).
 ///
 /// -> content
@@ -38,6 +39,7 @@
   style,
   license: true,
   title-font: auto,
+  font-size: 16pt,
   logo-type: "new",
 ) = {
   // general configuration
@@ -49,7 +51,7 @@
   set par(justify: false, leading: 0.7em)
   show link: set text(black)
 
-  set text(size: 16pt, fill: accent-color, hyphenate: false)
+  set text(size: font-size, fill: accent-color, hyphenate: false)
   if title-font != auto {
     set text(font: title-font)
   }

@@ -28,6 +28,8 @@
 /// - table-style (str, auto): Style for the table caption, either `"clean"`, `"apa"`, or `"ieee"`. If set to `auto`, uses the default for the main style (`"clean"` for `clean` style, `format` for the rest).
 /// - figure-style (str, auto): Style for the figure caption, either `"clean"`, `"apa"`, or `"ieee"`. If set to `auto`, uses the default for the main style (`"clean"` for `clean` style, `format` for the rest).
 /// - figure-spacing (length, none): Extra spacing to give to figures and tables. If `none`, no extra spacing.
+/// - font (string, auto): Font to use. By default, `"Libertinus Serif`" in all styles except `"strict"`, where it's `"Times New Roman"`. Can't be set with the `"strict"` style.
+/// - font-titlepage-size (lenght): Font size in the titlepage. Useful when messing with the `font` parameter.
 /// - double-sided (bool): Whether to use double-sided pages. This is not allowed in the `strict` style.
 /// - logo (str): Type of logo (`"old"` or `"new"`).
 /// - short-title (str): Shorter version of the title, to be displayed in the headers. Only applies if `double-sided` is set to `true`.
@@ -62,6 +64,8 @@
   table-style: auto,
   figure-style: auto,
   figure-spacing: 0.75em,
+  font: auto,
+  font-titlepage-size: 16pt,
   double-sided: false,
   logo: "new",
   short-title: none,
@@ -171,6 +175,25 @@
   assert(
     not (double-sided and style == "strict"),
     message: "'strict' style doesn't allow for 'double-sided' to be set to `true`.",
+  )
+
+  if font == auto {
+    font = if style == "strict" {
+      "Times New Roman"
+    } else { "Libertinus Serif" }
+  }
+
+  validate-argument("font", font, target-type: str)
+
+  assert(
+    not (font != auto and style == "strict"),
+    message: "'strict' style doesn't allow for 'font' to be set.",
+  )
+
+  validate-argument(
+    "font-titlepage-size",
+    font-titlepage-size,
+    target-type: (length),
   )
 
   validate-argument("logo", logo, possible-values: ("new", "old"))
@@ -338,10 +361,6 @@
   let accent-color = if style == "strict" { black } else { azuluc3m }
 
   /* TEXT */
-
-  let font = if style == "strict" {
-    "Times New Roman"
-  } else { "Libertinus Serif" }
 
   set text(size: 12pt, lang: language, font: font)
 
@@ -786,6 +805,7 @@
     accent-color,
     double-sided,
     if titlepage-style == auto { style } else { titlepage-style },
+    font-size: font-titlepage-size,
     logo-type: logo,
     license: license,
   )

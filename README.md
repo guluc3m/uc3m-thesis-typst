@@ -10,6 +10,7 @@ The template is based on [ldcas-uc3m/thesis-template](https://github.com/ldcas-u
 ## Features
 
 - **Three visual styles**: `fancy` (default), `clean`, and `strict` (university-compliant)
+- **Easy to understand error messages**
 - **Bilingual**: Spanish (`es`) and English (`en`)
 - **Automatic front matter**: title page, abstract, acknowledgements, table of contents, list of figures/tables/listings, and abbreviations
 - **Back matter**: bibliography, glossary, appendixes, and the mandatory generative AI declaration
@@ -132,6 +133,7 @@ Here are some theses written using this template:
 - [J. A. Verde - Procesamiento de señales de encefalograma para la detección de ataques epilépticos](https://github.com/joseaverde/TFG/tree/master/report)
 - [L. D. Casais - Implementing Interrupts, Timers, and Memory-Mapped I/O in CREATOR](https://github.com/ldcas-uc3m/TFM)
 - [A. Guerrero - Implementación en FPGA del procesador didáctico WepSIM](https://github.com/ALVAROPING1/TFM)
+- [J. A. Verde - Entorno para el modelado y simulación de sistemas electrónicos digitales](https://codeberg.org/joseaverde/TFM)
 
 ---
 
