@@ -22,10 +22,11 @@
 /// - date (datetime): Presentation date.
 /// - bibliography-content (content): Bibliography contents, usually calling `bibliography`.
 /// - language (str): `"en"` or `"es"`.
+/// - format (str): `"apa"` or `"ieee"`.
 /// - style (str): Visual style, mainly affecting headings, headers, and footers. The available styles are `strict`, which strictly follow's the university library's guidelines, `clean`, based on clean-dhbw, and `fancy`, based on my original LaTeX version.
 /// - titlepage-style (str, auto): Style for the titlepage (see `style`). If set to `auto`, uses the main style.
-/// - table-style (str, auto): Style for the table caption, either `"clean"` or `"ieee"`. If set to `auto`, uses the default for the main style (`"clean"` for `clean` style, `"ieee"` for the rest).
-/// - figure-style (str, auto): Style for the figure caption, either `"clean"` or `"ieee"`. If set to `auto`, uses the default for the main style (`"clean"` for `clean` style, `"ieee"` for the rest).
+/// - table-style (str, auto): Style for the table caption, either `"clean"`, `"apa"`, or `"ieee"`. If set to `auto`, uses the default for the main style (`"clean"` for `clean` style, `format` for the rest).
+/// - figure-style (str, auto): Style for the figure caption, either `"clean"`, `"apa"`, or `"ieee"`. If set to `auto`, uses the default for the main style (`"clean"` for `clean` style, `format` for the rest).
 /// - figure-spacing (length, none): Extra spacing to give to figures and tables. If `none`, no extra spacing.
 /// - double-sided (bool): Whether to use double-sided pages. This is not allowed in the `strict` style.
 /// - logo (str): Type of logo (`"old"` or `"new"`).
@@ -55,6 +56,7 @@
   date: none,
   bibliography-content: none,
   language: none,
+  format: none,
   style: "fancy",
   titlepage-style: auto,
   table-style: auto,
@@ -112,6 +114,12 @@
   validate-argument("language", language, possible-values: ("es", "en"))
 
   validate-argument(
+    "format",
+    format,
+    possible-values: ("apa", "ieee"),
+  )
+
+  validate-argument(
     "style",
     style,
     possible-values: ("fancy", "clean", "strict"),
@@ -126,7 +134,7 @@
   validate-argument(
     "table-style",
     table-style,
-    possible-values: (auto, "ieee", "clean"),
+    possible-values: (auto, "ieee", "apa", "clean"),
   )
 
   assert(
@@ -135,13 +143,13 @@
   )
 
   if table-style == auto {
-    table-style = if style == "clean" { "clean" } else { "ieee" }
+    table-style = if style == "clean" { "clean" } else { format }
   }
 
   validate-argument(
     "figure-style",
     figure-style,
-    possible-values: (auto, "ieee", "clean"),
+    possible-values: (auto, "apa", "ieee", "clean"),
   )
 
   assert(
@@ -150,7 +158,7 @@
   )
 
   if figure-style == auto {
-    figure-style = if style == "clean" { "clean" } else { "ieee" }
+    figure-style = if style == "clean" { "clean" } else { format }
   }
 
   validate-argument("figure-spacing", figure-spacing, target-type: (
@@ -574,14 +582,14 @@
 
   // caption position
   show figure.where(kind: image): set figure.caption(
-    position: bottom,
+    position: if figure-style == "apa" { top } else { bottom },
     separator: if figure-style == "ieee" [.] else { auto },
   )
-  show figure.caption.where(kind: image): set align(if figure-style == "ieee" {
-    left
-  } else { center })
+  show figure.caption.where(kind: image): set align(if figure-style == "clean" {
+    center
+  } else { left })
 
-  // change supplement for strict style
+  // supplement
   show figure.where(kind: image): set figure(
     supplement: if figure-style == "ieee" {
       "Fig."
@@ -589,8 +597,27 @@
     gap: { 1em },
   )
 
+  show figure.caption.where(kind: image): it => {
+    if figure-style == "apa" {
+      set align(start)
+      {
+        set text(
+          fill: accent-color,
+          weight: if style == "strict" { "regular" } else { "semibold" },
+        )
+        it.supplement
+        [ ]
+        context smallcaps(it.counter.display(it.numbering))
+      }
+      linebreak()
+      set text(weight: "regular")
+      emph(it.body)
+    } else { it }
+  }
+
   /* TABLES */
 
+  // separator
   show figure.where(kind: table): set figure.caption(
     position: top,
     separator: if table-style == "ieee" {
@@ -606,14 +633,27 @@
           fill: accent-color,
           weight: if style == "strict" { "regular" } else { "semibold" },
         )
-        context smallcaps(it.supplement)
+        smallcaps(it.supplement)
+        [ ]
+        smallcaps(it.counter.display(it.numbering))
+      }
+      linebreak()
+      set text(weight: "regular")
+      smallcaps(it.body)
+    } else if table-style == "apa" {
+      set align(start)
+      {
+        set text(
+          fill: accent-color,
+          weight: if style == "strict" { "regular" } else { "semibold" },
+        )
+        it.supplement
         [ ]
         context smallcaps(it.counter.display(it.numbering))
       }
       linebreak()
       set text(weight: "regular")
-      smallcaps(it.body)
-      linebreak()
+      emph(it.body)
     } else { it }
   }
 

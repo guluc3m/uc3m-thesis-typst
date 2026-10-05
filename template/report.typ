@@ -1,7 +1,7 @@
-#import "@preview/uc3m-thesis-ieee:0.4.0": conf
+#import "@preview/uc3m-thesis:0.4.0": conf
 #import "config/glossary.typ": glossary-entries
 #import "config/gen-ai.typ": genai-declaration
-#import "config/bibliography.typ": bibliography
+#import "config/bibliography.typ": bibliography, bibliography-style
 
 
 #show: conf.with(
@@ -14,6 +14,7 @@
   thesis-type: "TFG",
   date: datetime(year: 2025, month: 4, day: 20),
   language: "es",
+  format: bibliography-style,
   style: "fancy",
   license: true,
   double-sided: true,
@@ -26,7 +27,7 @@
   ),
   abstract: (
     body: [Ta wapo.],
-    keywords: ("Caca", "Culo", "Pedo", "Pis"), // see https://www.ieee.org/content/dam/ieee-org/ieee/web/org/pubs/ieee-taxonomy.pdf
+    keywords: ("Caca", "Culo", "Pedo", "Pis"), // for IEEE, see https://www.ieee.org/content/dam/ieee-org/ieee/web/org/pubs/ieee-taxonomy.pdf
   ),
   english-abstract: (
     body: ['tis cool.],

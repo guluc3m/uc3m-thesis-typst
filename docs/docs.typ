@@ -6,7 +6,7 @@
 #show: codly-init.with()
 
 #set document(
-  title: "uc3m-thesis-ieee — Documentation",
+  title: "uc3m-thesis — Documentation",
   author: "GUL UC3M",
 )
 
@@ -24,7 +24,7 @@
   header: context {
     if counter(page).get().first() > 1 {
       set text(size: 9pt, fill: luma(120))
-      [*uc3m-thesis-ieee* v#package_version]
+      [*uc3m-thesis* v#package_version]
       h(1fr)
       counter(page).display()
       v(-0.5em)
@@ -55,13 +55,13 @@
 
 
 #align(center)[
-  #text(size: 26pt, weight: "bold")[uc3m-thesis-ieee]
+  #text(size: 26pt, weight: "bold")[uc3m-thesis]
   \
   #text(size: 13pt, fill: luma(80))[Template Documentation — v#package_version]
   #v(0.4em)
   #text(
     size: 10pt,
-  )[Universidad Carlos III de Madrid thesis template, IEEE style]
+  )[Universidad Carlos III de Madrid thesis template]
 ]
 
 #v(1.5em)
@@ -74,19 +74,31 @@
   inset: (x: 8pt, y: 5pt),
 )
 
-A #link("https://typst.app/")[Typst] template for bachelor/master theses at #link("https://uc3m.es")[Universidad Carlos III de Madrid], following #link("https://uc3m.libguides.com/en/TFG/writing")[university guidelines].
+A #link("https://typst.app/")[Typst] template for bachelor/master theses at
+#link("https://uc3m.es")[Universidad Carlos III de Madrid], following #link(
+  "https://uc3m.libguides.com/en/TFG/writing",
+)[university guidelines].
 
-The template is based on #link("https://github.com/ldcas-uc3m/thesis-template")[ldcas-uc3m/thesis-template] and #link("https://github.com/JorgeyGari/clean-uc3m-typst-template")[clean-uc3m] (a fork of #link("https://github.com/roland-KA/clean-dhbw-typst-template")[clean-dhbw]).
+The template is based on #link(
+  "https://github.com/ldcas-uc3m/thesis-template",
+)[ldcas-uc3m/thesis-template] and #link(
+  "https://github.com/JorgeyGari/clean-uc3m-typst-template",
+)[clean-uc3m] (a fork of #link(
+  "https://github.com/roland-KA/clean-dhbw-typst-template",
+)[clean-dhbw]).
 
 
 
 = Installation
-The recommended way to install it is through #link("https://typst.app/universe/")[Typst Universe]. You can initialize a new project from the template with:
+The recommended way to install it is through #link(
+  "https://typst.app/universe/",
+)[Typst Universe]. You can initialize a new project from the template with:
 ```shell
-typst init @preview/uc3m-thesis-ieee my-final-thesis
+typst init @preview/uc3m-thesis my-final-thesis
 ```
 
-This creates a `my-final-thesis/` directory with all the files needed to get started.
+This creates a `my-final-thesis/` directory with all the files needed to get
+started.
 
 
 = Configuration
@@ -97,7 +109,7 @@ with `#show: conf.with(...)`.
 == Minimal example
 
 ```typ
-#import "@preview/uc3m-thesis-ieee:0.4.0": conf
+#import "@preview/uc3m-thesis:0.4.0": conf
 
 #show: conf.with(
   title: "My Bachelor Thesis",
@@ -108,6 +120,7 @@ with `#show: conf.with(...)`.
   thesis-type: "TFG",
   date: datetime(year: 2025, month: 6, day: 15),
   language: "en",
+  format: "ieee",
   abstract: (
     body: [A short description of my thesis.],
     keywords: ("Keyword 1", "Keyword 2", "Keyword 3"),
@@ -138,7 +151,7 @@ The `abstract` parameter takes a dictionary with the following keys:
   [The abstract text.],
   [`keywords`\*],
   [`array` of `str`],
-  [Between 2 and 5 keywords. See #link(
+  [Between 2 and 5 keywords. For IEE, see #link(
       "https://www.ieee.org/content/dam/ieee-org/ieee/web/org/pubs/ieee-taxonomy.pdf",
     )[IEEE Taxonomy].],
 )
@@ -307,7 +320,7 @@ To reference a glossary term in the body text, use `#gls("key")` (singular) or
 after the `#show: conf.with(...)` call:
 
 ```typ
-#import "@preview/uc3m-thesis-ieee:0.4.0": conf
+#import "@preview/uc3m-thesis:0.4.0": conf
 #import "@preview/glossarium:0.5.9": gls, glspl
 
 // In the body:
@@ -480,8 +493,8 @@ An opinionated style inspired by the original #link(
 - Decorative chapter title pages with a horizontal rule and chapter number/name
   centered
 - Serif headers showing the current chapter name and page number
-- IEEE-style figure captions and table captions
-- *Libertinus Serif* body font
+- APA or IEEE figure captions and table captions (depending on `format`)
+- Libertinus Serif body font
 
 // Insert a screenshot of the fancy style here
 #images_example("fancy")
@@ -494,7 +507,7 @@ A clean, minimal style inspired by #link(
 - Large chapter number in the background on chapter pages
 - Simple running header showing the chapter name
 - Clean-style figure and table captions
-- *Libertinus Serif* body font
+- Libertinus Serif body font
 
 // Insert a screenshot of the clean style here
 #images_example("clean")
@@ -505,6 +518,7 @@ Strictly follows the #link("https://uc3m.libguides.com/en/TFG/writing")[UC3M
   library guidelines]:
 - Centered uppercase chapter headings
 - Page numbers in the footer (Roman numerals in front matter, Arabic in body)
+- APA or IEEE figure captions and table captions (depending on `format`)
 - No decorative elements
 - Double-sided layout is *not* permitted with this style
 - Times New Roman font, 12pt
@@ -517,6 +531,22 @@ Strictly follows the #link("https://uc3m.libguides.com/en/TFG/writing")[UC3M
   body: `style: "strict", titlepage-style: "fancy"`.]
 
 #line(length: 100%, stroke: 0.5pt)
+
+
+= Table/Figure styles
+
+Tables and figures also have different visual styles. These are automatically
+set depending on the `style` and `format` values, but can be overwritten through
+`table-style` and `figure-style`.
+
+Both `"apa"` and `"ieee"` follow the university guidelines for APA/IEEE format, while the `"clean"` style is more cohesive.
+
+#for style in ("apa", "ieee", "clean") {
+  figure(
+    image("img/figure-" + style + ".png", width: 80%),
+    caption: [Example of the #strong(raw("\"" + style + "\"")) figure style.],
+  )
+}
 
 
 #pagebreak()

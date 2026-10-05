@@ -1,4 +1,4 @@
-# UC3M IEEE Thesis Template
+# UC3M Thesis Template
 
 A [Typst](https://typst.app/) template for bachelor/master theses at [Universidad Carlos III de Madrid](https://uc3m.es), following [university guidelines](https://uc3m.libguides.com/en/TFG/writing)[^1].
 
@@ -13,7 +13,7 @@ The template is based on [ldcas-uc3m/thesis-template](https://github.com/ldcas-u
 - **Bilingual**: Spanish (`es`) and English (`en`)
 - **Automatic front matter**: title page, abstract, acknowledgements, table of contents, list of figures/tables/listings, and abbreviations
 - **Back matter**: bibliography, glossary, appendixes, and the mandatory generative AI declaration
-- **IEEE-style citations and figure/table captions** (or clean-style captions)
+- **APA or IEEE-style citations and figure/table captions** (or clean-style captions)
 - **Glossary and acronym support** via [`glossarium`](https://typst.app/universe/package/glossarium/)
 - **Chapter-level numbering** for figures, tables, and equations
 - **Double-sided layout** support
@@ -30,7 +30,7 @@ The template is based on [ldcas-uc3m/thesis-template](https://github.com/ldcas-u
 You can initialize a new project from the template with:
 
 ```shell
-typst init @preview/uc3m-thesis-ieee my-final-thesis
+typst init @preview/uc3m-thesis my-final-thesis
 ```
 
 This creates a `my-final-thesis/` directory with all the files needed to get started.
@@ -41,11 +41,11 @@ This creates a `my-final-thesis/` directory with all the files needed to get sta
 > One-liner for lazy people:
 > - Linux:
 >    ```bash
->    git clone https://github.com/guluc3m/uc3m-thesis-ieee-typst.git --depth=1 && mv uc3m-thesis-ieee-typst/template/* . && rm -rf uc3m-thesis-ieee-typst/.git* uc3m-thesis-ieee-typst/template && sed -i 's%"@preview/uc3m-thesis-ieee:0.4.0"%"uc3m-thesis-ieee-typst/lib.typ"%' report.typ
+>    git clone https://github.com/guluc3m/uc3m-thesis-typst.git --depth=1 && mv uc3m-thesis-typst/template/* . && rm -rf uc3m-thesis-typst/.git* uc3m-thesis-typst/template && sed -i 's%"@preview/uc3m-thesis:0.4.0"%"uc3m-thesis-typst/lib.typ"%' report.typ
 >    ```
 > - MacOS:
 >    ```bash
->    git clone https://github.com/guluc3m/uc3m-thesis-ieee-typst.git --depth=1 && mv uc3m-thesis-ieee-typst/template/* . && rm -rf uc3m-thesis-ieee-typst/.git* uc3m-thesis-ieee-typst/template && sed -i '' 's%"@preview/uc3m-thesis-ieee:0.4.0"%"uc3m-thesis-ieee-typst/lib.typ"%' report.typ
+>    git clone https://github.com/guluc3m/uc3m-thesis-typst.git --depth=1 && mv uc3m-thesis-typst/template/* . && rm -rf uc3m-thesis-typst/.git* uc3m-thesis-typst/template && sed -i '' 's%"@preview/uc3m-thesis:0.4.0"%"uc3m-thesis-typst/lib.typ"%' report.typ
 >    ```
 
 1. Make a folder for your report.
@@ -54,8 +54,8 @@ This creates a `my-final-thesis/` directory with all the files needed to get sta
 4. Change the following line in `report.typ`:
    ```diff
    @@ -1,4 +1,4 @@
-   -#import "@preview/uc3m-thesis-ieee:0.4.0": conf
-   +#import "uc3m-thesis-ieee-typst/lib.typ": conf
+   -#import "@preview/uc3m-thesis:0.4.0": conf
+   +#import "uc3m-thesis-typst/lib.typ": conf
    ```
 5. [Optional, but recommended] Delete the `.git/`, `template/` folders and `typst.toml`, `.gitignore` files.
 
@@ -74,7 +74,7 @@ my-thesis/
 │  └─ ...
 ├─ img/
    └─ ...
-└─ uc3m-thesis-ieee-typst/   ← only for manual install
+└─ uc3m-thesis-typst/   ← only for manual install
    ├─ img/
    ├─ lib.typ
    └─ ...
@@ -139,4 +139,4 @@ Here are some theses written using this template:
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on commits, formatting, and pull requests.
 
-If you find a bug or have a feature request, please [open an issue](https://github.com/guluc3m/uc3m-thesis-ieee-typst/issues).
+If you find a bug or have a feature request, please [open an issue](https://github.com/guluc3m/uc3m-thesis-typst/issues).
