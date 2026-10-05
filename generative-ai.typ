@@ -64,8 +64,8 @@
     fill: (x, y) => if x != int(usage) { gray },
     columns: 2,
     align: auto,
-    [*#locale.AFFIRMATION.at(style).at(language)*;],
-    [*#locale.NEGATION.at(style).at(language)*;],
+    [*#locale.AFFIRMATION.at(style).at(language)*],
+    [*#locale.NEGATION.at(style).at(language)*],
   )
 
   if not usage {
@@ -79,8 +79,8 @@
 
   table(
     columns: (1fr, 1fr),
-    align: center,
-    inset: 0.8em,
+    align: left,
+    inset: (x: 1.5em, y: 0.8em),
     table.cell(colspan: 2, inset: 0.6em)[*#locale.QUESTION.at(language)*],
 
     /* general question */
@@ -94,7 +94,7 @@
       (
         // prompt spanning all columns
         table.cell(colspan: 2)[
-          #set enum(start: index + 1) // correctly set enum number
+          #set enum(start: index + 1, indent: 0em) // correctly set enum number
           + #question-data.prompt.at(language)
         ],
         // Answer layout: Answer1 (2fr), Answer2 (1fr+1fr with colspan), Answer3 (2fr)
@@ -140,8 +140,12 @@
       if technical-usage.keys().contains(key) {
         let label = locale.AI-TECHNICAL-USAGE.questions.at(key).at(language)
         let body = technical-usage.at(key)
-        [- *#label:*]
-        answer-box(body)
+        list.item({
+          emph(label)
+          linebreak()
+          answer-box(body)
+        })
+        parbreak()
       }
     }
   }
