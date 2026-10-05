@@ -42,11 +42,11 @@ This creates a `my-final-thesis/` directory with all the files needed to get sta
 > One-liner for lazy people:
 > - Linux:
 >    ```bash
->    git clone https://github.com/guluc3m/uc3m-thesis-typst.git --depth=1 && mv uc3m-thesis-typst/template/* . && rm -rf uc3m-thesis-typst/.git* uc3m-thesis-typst/template && sed -i 's%"@preview/uc3m-thesis:0.4.0"%"uc3m-thesis-typst/lib.typ"%' report.typ
+>    mkdir my-final-thesis && cd my-final-thesis && git clone https://github.com/guluc3m/uc3m-thesis-typst.git --depth=1 && mv uc3m-thesis-typst/template/* . && rm -rf uc3m-thesis-typst/.git* uc3m-thesis-typst/template && sed -i 's%"@preview/uc3m-thesis:0.4.0"%"uc3m-thesis-typst/lib.typ"%' report.typ
 >    ```
 > - MacOS:
 >    ```bash
->    git clone https://github.com/guluc3m/uc3m-thesis-typst.git --depth=1 && mv uc3m-thesis-typst/template/* . && rm -rf uc3m-thesis-typst/.git* uc3m-thesis-typst/template && sed -i '' 's%"@preview/uc3m-thesis:0.4.0"%"uc3m-thesis-typst/lib.typ"%' report.typ
+>    mkdir my-final-thesis && cd my-final-thesis && git clone https://github.com/guluc3m/uc3m-thesis-typst.git --depth=1 && mv uc3m-thesis-typst/template/* . && rm -rf uc3m-thesis-typst/.git* uc3m-thesis-typst/template && sed -i '' 's%"@preview/uc3m-thesis:0.4.0"%"uc3m-thesis-typst/lib.typ"%' report.typ
 >    ```
 
 1. Make a folder for your report.
@@ -63,7 +63,7 @@ This creates a `my-final-thesis/` directory with all the files needed to get sta
 The resulting structure should be:
 
 ```
-my-thesis/
+my-final-thesis/
 ├─ report.typ
 ├─ references.bib
 ├─ config/
