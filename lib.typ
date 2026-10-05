@@ -367,14 +367,14 @@
             text(
               size: 11pt,
               weight: "semibold",
-              fill: azuluc3m,
+              fill: accent-color,
               it.body,
             ),
           )
         ]
       } else {
         set par(leading: 4pt, justify: false)
-        text(it, top-edge: 0.75em, bottom-edge: -0.25em, fill: azuluc3m)
+        text(it, top-edge: 0.75em, bottom-edge: -0.25em, fill: accent-color)
       }
       v(16pt, weak: true)
     } else if style == "fancy" {
@@ -408,11 +408,11 @@
       /* frontmatter / endmatter */
 
       if style == "clean" {
-        v(32pt) + text(size: 32pt, fill: azuluc3m, weight: "bold", it)
+        v(32pt) + text(size: 32pt, fill: accent-color, weight: "bold", it)
       } else if style == "fancy" {
         set align(center)
         box(
-          stroke: (top: azuluc3m + 1.8pt),
+          stroke: (top: accent-color + 1.8pt),
           width: 100%,
           height: 2em,
           inset: (top: 1.5em),
@@ -438,14 +438,14 @@
                 top-edge: "bounds",
                 size: 160pt,
                 weight: 900,
-                azuluc3m.lighten(70%),
+                accent-color.lighten(70%),
               ),
             )
             text(
               // heading text on separate line
               it.body,
               size: 40pt,
-              fill: azuluc3m,
+              fill: accent-color,
               weight: "bold",
               top-edge: 0.75em,
               bottom-edge: -0.25em,
@@ -455,7 +455,7 @@
             v(32pt)
             text(
               size: 32pt,
-              fill: azuluc3m,
+              fill: accent-color,
               weight: "bold",
               counter(heading).display() + h(0.5em) + it.body,
             )
@@ -469,7 +469,7 @@
             // chapter number
             box(
               width: 100%,
-              stroke: (top: azuluc3m + 1.8pt, bottom: azuluc3m + 1.8pt),
+              stroke: (top: accent-color + 1.8pt, bottom: accent-color + 1.8pt),
               inset: (top: 1.5em, bottom: 1.5em),
               {
                 set align(center)
@@ -502,7 +502,7 @@
               inset: (top: 0.2em),
               {
                 set align(center)
-                set text(azuluc3m)
+                set text(accent-color)
                 set par(justify: false)
                 text(upper(it.body), size: 24pt, weight: "semibold")
               },
@@ -556,7 +556,7 @@
     set par(first-line-indent: 0pt)
     if style == "strict" { it } else {
       [
-        #set text(azuluc3m, weight: "semibold")
+        #set text(accent-color, weight: "semibold")
         #it.supplement #context it.counter.display(it.numbering)#it.separator
       ]
       it.body
@@ -699,7 +699,7 @@
         }
 
         v(-0.6em)
-        line(length: 100%, stroke: 0.4pt + azuluc3m)
+        line(length: 100%, stroke: 0.4pt + accent-color)
       }
     },
 
@@ -714,7 +714,7 @@
         }
       } else if style == "fancy" {
         set align(center)
-        set text(azuluc3m)
+        set text(accent-color)
 
         if in-frontmatter.get() {
           counter(page).display("i") // roman page numbers for the frontmatter
