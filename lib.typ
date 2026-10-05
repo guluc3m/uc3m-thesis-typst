@@ -9,6 +9,9 @@
 #import "arguments.typ": validate-argument
 #import "generative-ai.typ": genai-template
 
+// wrapper to prevent shadowing
+#let bibliography-fn = bibliography
+
 /// Main configuration function.
 ///
 /// Recommended to use with `#show: conf.with(...)`.
@@ -20,9 +23,9 @@
 /// - location (str): Presentation location.
 /// - thesis-type (str): Type of thesis (`"TFG"` or `"TFM"`).
 /// - date (datetime): Presentation date.
-/// - bibliography-content (content): Bibliography contents, usually calling `bibliography`.
+/// - bibliography (str, content): Either the path to a BibLaTeX/Hayagriva file (`str`) or a custom bibliography (`content`), usually obtained by calling `bibliography`. In the case of a path, the citation style is inherited from `format`.
 /// - language (str): `"en"` or `"es"`.
-/// - format (str): `"apa"` or `"ieee"`.
+/// - format (str): Thesis format, either `"apa"` or `"ieee"`. Applies to `bibliography` if specifying a file.
 /// - style (str): Visual style, mainly affecting headings, headers, and footers. The available styles are `strict`, which strictly follow's the university library's guidelines, `clean`, based on clean-dhbw, and `fancy`, based on my original LaTeX version.
 /// - titlepage-style (str, auto): Style for the titlepage (see `style`). If set to `auto`, uses the main style.
 /// - table-style (str, auto): Style for the table caption, either `"clean"`, `"apa"`, or `"ieee"`. If set to `auto`, uses the default for the main style (`"clean"` for `clean` style, `format` for the rest).
@@ -56,7 +59,7 @@
   location: none,
   thesis-type: none,
   date: none,
-  bibliography-content: none,
+  bibliography: none,
   language: none,
   format: none,
   style: "fancy",
@@ -109,10 +112,10 @@
   validate-argument("date", date, target-type: datetime)
 
   validate-argument(
-    "bibliography-content",
-    bibliography-content,
+    "bibliography",
+    bibliography,
     optional: true,
-    target-type: content,
+    target-type: (str, content),
   )
 
   validate-argument("language", language, possible-values: ("es", "en"))
@@ -1128,7 +1131,7 @@
 
   // color bibliography
   // https://forum.typst.app/t/how-do-i-customize-the-numbering-of-the-bibliography/1490/3
-  show selector(bibliography).or(cite): it => {
+  show selector(bibliography-fn).or(cite): it => {
     show link: set text(accent-color)
 
     // bibliography references (IEEE)
@@ -1139,7 +1142,11 @@
     it
   }
 
-  bibliography-content
+  if type(bibliography) == str {
+    bibliography-fn(bibliography, style: format)
+  } else {
+    bibliography
+  }
 
   /* GLOSSARY */
 

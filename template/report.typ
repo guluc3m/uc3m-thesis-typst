@@ -1,7 +1,6 @@
 #import "@preview/uc3m-thesis:0.4.0": conf
 #import "config/glossary.typ": glossary-entries
 #import "config/gen-ai.typ": genai-declaration
-#import "config/bibliography.typ": bibliography, bibliography-style
 
 
 #show: conf.with(
@@ -14,12 +13,12 @@
   thesis-type: "TFG",
   date: datetime(year: 2025, month: 4, day: 20),
   language: "es",
-  format: bibliography-style,
+  format: "ieee",
   style: "fancy",
   license: true,
   double-sided: true,
   flyleaf: true,
-  bibliography-content: bibliography,
+  bibliography: "/references.bib",
   epigraph: (
     quote: [Cacaaaaaaaaaaaa.],
     author: "Uno que se cagaba",

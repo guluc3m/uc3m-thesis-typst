@@ -335,9 +335,9 @@ want to use `glossarium`.
 <sec:genai-declaration>
 
 The `genai-declaration` parameter is *required* by the university. You can
-either:
+either use the built-in template or provide custom content.
 
-=== Option A: Use the built-in template (recommended)
+=== Using the built-in template (recommended)
 
 *If you did not use generative AI* (`usage: false`):
 
@@ -448,7 +448,7 @@ genai-declaration: (
 ),
 ```
 
-=== Option B: Provide custom content
+=== Providing custom content
 
 If you need full control, pass any `content` directly:
 
@@ -460,22 +460,14 @@ genai-declaration: [
 
 == Bibliography
 
-Pass the result of Typst's built-in `bibliography()` call:
-
-```typ
-// config/bibliography.typ
-#let bibliography-file = "../references.bib"
-#let bibliography-style = "ieee"
-#let bibliography = bibliography(bibliography-file, style: bibliography-style)
-```
+You can either pass the path to a BibLaTeX/Hayagriva file (the citation style will be inherited from `format`) or the result of Typst's built-in #link("https://typst.app/docs/reference/model/bibliography")[`bibliography()`] function for a more custom bibliography:
 
 ```typ
 // report.typ
-#import "config/bibliography.typ": bibliography
-
 #show: conf.with(
   // ...
-  bibliography-content: bibliography,
+  // bibliography: "/path/to/references.bib",
+  bibliography: bibliography("/path/to/references.bib", style: "chicago-author-date"),
 )
 ```
 
