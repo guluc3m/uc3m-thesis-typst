@@ -12,6 +12,7 @@ authors = [
 license = "Unlicense"
 description = "Bachelor/Master's Thesis template for Universidad Carlos III de Madrid"
 repository = "https://github.com/guluc3m/uc3m-thesis-typst"
+compiler = "0.14.2"
 keywords = ["uc3m", "thesis"]
 categories = ["thesis"]
 exclude = [".github", "docs", "examples", ".vscode", "template/report.pdf", "out"]
@@ -19,4 +20,4 @@ exclude = [".github", "docs", "examples", ".vscode", "template/report.pdf", "out
 [template]
 path = "template"
 entrypoint = "report.typ"
-thumbnail = "thumbnail.svg"
+thumbnail = "thumbnail.png"
