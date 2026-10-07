@@ -24,6 +24,9 @@ The template is based on [ldcas-uc3m/thesis-template](https://github.com/ldcas-u
 
 ## Usage
 
+For more information, check the [manual](https://github.com/guluc3m/uc3m-thesis-typst/blob/main/docs/docs.pdf).
+
+
 ### Installation
 
 #### Via Typst Universe (recommended)
@@ -36,7 +39,18 @@ typst init @preview/uc3m-thesis my-final-thesis
 
 This creates a `my-final-thesis/` directory with all the files needed to get started.
 
-#### Manual installation
+#### Manual installation (with Just)
+
+Install [Just](https://github.com/casey/just) and run:
+```
+just install
+```
+Now the package is available with:
+```typst
+#import "@local/uc3m-thesis:0.4.0": conf
+```
+
+#### Manual installation (for real)
 
 > [!TIP]
 > One-liner for lazy people:

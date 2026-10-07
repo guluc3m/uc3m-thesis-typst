@@ -35,7 +35,6 @@
   location,
   advisors,
   accent-color,
-  double-sided,
   style,
   license: true,
   title-font: auto,
@@ -155,6 +154,4 @@
       },
     )
   }
-
-  newpage(double-sided, weak: false)
 }

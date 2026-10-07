@@ -1,7 +1,5 @@
 #import "@preview/hydra:0.6.2": hydra
-#import "@preview/glossarium:0.5.9": (
-  gls, glspl, make-glossary, print-glossary, register-glossary,
-)
+#import "@preview/glossarium:0.5.9": gls, glspl, make-glossary, print-glossary, register-glossary
 
 #import "titlepage.typ": titlepage
 #import "locale.typ" as locale
@@ -307,8 +305,7 @@
       usage: (target-type: bool),
       data-usage: (
         target-type: dictionary,
-        optional: type(genai-declaration) == dictionary
-          and not genai-declaration.usage,
+        optional: type(genai-declaration) == dictionary and not genai-declaration.usage,
         schema: (
           // true  = YES / used with authorization
           // false = NO  / not used
@@ -320,8 +317,7 @@
       ),
       technical-usage: (
         target-type: dictionary,
-        optional: type(genai-declaration) == dictionary
-          and not genai-declaration.usage,
+        optional: type(genai-declaration) == dictionary and not genai-declaration.usage,
         schema: (
           documentation: (target-type: content, optional: true),
           review: (target-type: content, optional: true),
@@ -339,8 +335,7 @@
       ),
       usage-reflection: (
         target-type: content,
-        optional: type(genai-declaration) == dictionary
-          and not genai-declaration.usage,
+        optional: type(genai-declaration) == dictionary and not genai-declaration.usage,
       ),
     ),
   )
@@ -727,8 +722,7 @@
       }
 
       if (
-        (style == "clean" and not in-appendix.get())
-          or (style == "fancy" and in-body.get() and not is-chapter-start())
+        (style == "clean" and not in-appendix.get()) or (style == "fancy" and in-body.get() and not is-chapter-start())
       ) {
         // show header
         set text(accent-color)
@@ -812,6 +806,8 @@
     logo-type: logo,
     license: license,
   )
+
+  newpage(double-sided, weak: false)
 
   if flyleaf { make-flyleaf(double-sided) }
 
