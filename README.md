@@ -24,7 +24,7 @@ The template is based on [ldcas-uc3m/thesis-template](https://github.com/ldcas-u
 
 ## Usage
 
-For more information, check the [manual](https://github.com/guluc3m/uc3m-thesis-typst/blob/main/docs/docs.pdf).
+For more information, check the [manual](docs/manual.pdf).
 
 
 ### Installation
