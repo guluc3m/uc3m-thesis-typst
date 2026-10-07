@@ -24,7 +24,7 @@ The template is based on [ldcas-uc3m/thesis-template](https://github.com/ldcas-u
 
 ## Usage
 
-For more information, check the [manual](docs/manual.pdf).
+For more in-depth information, check the [manual](docs/manual.pdf).
 
 
 ### Installation
@@ -39,7 +39,7 @@ typst init @preview/uc3m-thesis my-final-thesis
 
 This creates a `my-final-thesis/` directory with all the files needed to get started.
 
-#### Manual installation (with Just)
+#### Manual installation
 
 Install [Just](https://github.com/casey/just) and run:
 ```
@@ -48,51 +48,6 @@ just install
 Now the package is available with:
 ```typst
 #import "@local/uc3m-thesis:1.0.0": conf
-```
-
-#### Manual installation (for real)
-
-> [!TIP]
-> One-liner for lazy people:
-> - Linux:
->    ```bash
->    mkdir my-final-thesis && cd my-final-thesis && git clone https://github.com/guluc3m/uc3m-thesis-typst.git --depth=1 && mv uc3m-thesis-typst/template/* . && rm -rf uc3m-thesis-typst/.git* uc3m-thesis-typst/template && sed -i 's%"@preview/uc3m-thesis:1.0.0"%"uc3m-thesis-typst/lib.typ"%' report.typ
->    ```
-> - MacOS:
->    ```bash
->    mkdir my-final-thesis && cd my-final-thesis && git clone https://github.com/guluc3m/uc3m-thesis-typst.git --depth=1 && mv uc3m-thesis-typst/template/* . && rm -rf uc3m-thesis-typst/.git* uc3m-thesis-typst/template && sed -i '' 's%"@preview/uc3m-thesis:1.0.0"%"uc3m-thesis-typst/lib.typ"%' report.typ
->    ```
-
-1. Make a folder for your report.
-2. Clone or download this repository as a subfolder.
-3. Move the files inside `template/` to your project folder.
-4. Change the following line in `report.typ`:
-   ```diff
-   @@ -1,4 +1,4 @@
-   -#import "@preview/uc3m-thesis:1.0.0": conf
-   +#import "uc3m-thesis-typst/lib.typ": conf
-   ```
-5. [Optional, but recommended] Delete the `.git/`, `template/` folders and `typst.toml`, `.gitignore` files.
-
-The resulting structure should be:
-
-```
-my-final-thesis/
-├─ report.typ
-├─ references.bib
-├─ config/
-│  ├─ bibliography.typ
-│  ├─ gen-ai.typ
-│  └─ glossary.typ
-├─ parts/
-│  ├─ introduction.typ
-│  └─ ...
-├─ img/
-   └─ ...
-└─ uc3m-thesis-typst/   ← only for manual install
-   ├─ img/
-   ├─ lib.typ
-   └─ ...
 ```
 
 ### Compilation
@@ -108,25 +63,13 @@ To comply with the recommended PDF/A ISO standard:
 typst compile report.typ --pdf-standard=a-4
 ```
 
-> [!TIP]
-> For [VS Code](https://code.visualstudio.com/) users, it is recommended to use the [Tinymist Typst](https://marketplace.visualstudio.com/items/?itemName=myriad-dreamin.tinymist) extension, which works without needing to install the compiler and provides live preview, autocompletion, and formatting.
+You can also use an IDE extension to preview and compile:
+- [VS Code](https://code.visualstudio.com/): [Tinymist Typst](https://marketplace.visualstudio.com/items/?itemName=myriad-dreamin.tinymist)
+- [Neovim](https://neovim.io/): [typst-preview.nvim](https://github.com/chomosuke/typst-preview.nvim) plugin.
+- [Zed](https://zed.dev/): [Typst](https://zed.dev/extensions/typst)
+- [IntelliJ](https://www.jetbrains.com/ides/): [Typst Support](https://plugins.jetbrains.com/plugin/27697-typst-support)
+- [GNU Emacs](https://www.gnu.org/software/emacs/): [typst-preview.el](https://github.com/havarddj/typst-preview.el)
 
-> [!TIP]
-> For [Neovim](https://neovim.io/) users, it is recommended to use the [typst-preview.nvim](https://github.com/chomosuke/typst-preview.nvim) plugin.
-
-
-
-## Packages Used
-
-This template depends on the following Typst packages (automatically resolved via Typst Universe):
-
-| Package | Purpose |
-|---------|---------|
-| [`hydra`](https://typst.app/universe/package/hydra/) | Displays the current chapter heading in the page header. |
-| [`glossarium`](https://typst.app/universe/package/glossarium/) | Glossary and acronym support. |
-
-
----
 
 ## More information
 
@@ -141,10 +84,10 @@ This template depends on the following Typst packages (automatically resolved vi
 - [Typerino](https://typerino.com/) - Online Typst equation editor
 - [L. Casais - Memorias de p**** madre: Introducción a Typst](https://github.com/rajayonin/typst-intro)
 
-### Examples
 
+### Examples
 Here are some theses written using this template:
-- [J. A. Verde - Procesamiento de señales de encefalograma para la detección de ataques epilépticos](https://github.com/joseaverde/TFG/tree/master/report)
+- [J. A. Verde - Procesamiento de señales de encefalograma para la detección de ataques epilépticos](https://github.com/joseaverde/TFG/tree/7ab7c2f6eeb9e70f27b7a67a8807b10a8a5a4152/report)
 - [L. D. Casais - Implementing Interrupts, Timers, and Memory-Mapped I/O in CREATOR](https://github.com/ldcas-uc3m/TFM)
 - [A. Guerrero - Implementación en FPGA del procesador didáctico WepSIM](https://github.com/ALVAROPING1/TFM)
 - [J. A. Verde - Entorno para el modelado y simulación de sistemas electrónicos digitales](https://codeberg.org/joseaverde/TFM)
