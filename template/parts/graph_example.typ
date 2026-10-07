@@ -1,4 +1,4 @@
-#import "@preview/lilaq:0.5.0" as lq
+#import "@preview/lilaq:0.6.0" as lq
 
 #let x = lq.linspace(0, 20)
 

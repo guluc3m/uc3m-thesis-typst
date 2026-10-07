@@ -1,5 +1,5 @@
-#import "@preview/hydra:0.6.2": hydra
-#import "@preview/glossarium:0.5.9": (
+#import "@preview/hydra:0.6.3": hydra
+#import "@preview/glossarium:0.5.10": (
   gls, glspl, make-glossary, print-glossary, register-glossary,
 )
 

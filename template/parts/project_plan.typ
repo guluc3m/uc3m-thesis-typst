@@ -1,4 +1,4 @@
-#import "@preview/gantty:0.4.0": gantt
+#import "@preview/gantty:0.5.1": gantt
 
 = Project Plan
 
