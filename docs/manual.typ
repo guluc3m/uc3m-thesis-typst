@@ -458,20 +458,6 @@ genai-declaration: [
 ],
 ```
 
-== Bibliography
-
-You can either pass the path to a BibLaTeX/Hayagriva file (the citation style will be inherited from `format`) or the result of Typst's built-in #link("https://typst.app/docs/reference/model/bibliography")[`bibliography()`] function for a more custom bibliography:
-
-```typ
-// report.typ
-#show: conf.with(
-  // ...
-  // bibliography: "/path/to/references.bib",
-  bibliography: bibliography("/path/to/references.bib", style: "chicago-author-date"),
-)
-```
-
-#line(length: 100%, stroke: 0.5pt)
 
 = Styles <sec:styles>
 

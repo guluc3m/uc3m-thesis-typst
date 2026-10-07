@@ -21,9 +21,9 @@
 /// - location (str): Presentation location.
 /// - thesis-type (str): Type of thesis (`"TFG"` or `"TFM"`).
 /// - date (datetime): Presentation date.
-/// - bibliography (str, content): Either the path to a BibLaTeX/Hayagriva file (`str`) or a custom bibliography (`content`), usually obtained by calling `bibliography`. In the case of a path, the citation style is inherited from `format`.
+/// - bibliography-content (content): Bibliography contents, usually obtained by calling `bibliography`.
 /// - language (str): `"en"` or `"es"`.
-/// - format (str): Thesis format, either `"apa"` or `"ieee"`. Applies to `bibliography` if specifying a file.
+/// - format (str): Thesis format, either `"apa"` or `"ieee"`.
 /// - style (str): Visual style, mainly affecting headings, headers, and footers. The available styles are `strict`, which strictly follow's the university library's guidelines, `clean`, based on clean-dhbw, and `fancy`, based on my original LaTeX version.
 /// - titlepage-style (str, auto): Style for the titlepage (see `style`). If set to `auto`, uses the main style.
 /// - table-style (str, auto): Style for the table caption, either `"clean"`, `"apa"`, or `"ieee"`. If set to `auto`, uses the default for the main style (`"clean"` for `clean` style, `format` for the rest).
@@ -57,7 +57,7 @@
   location: none,
   thesis-type: none,
   date: none,
-  bibliography: none,
+  bibliography-content: none,
   language: none,
   format: none,
   style: "fancy",
@@ -111,7 +111,7 @@
 
   validate-argument(
     "bibliography",
-    bibliography,
+    bibliography-content,
     optional: true,
     target-type: (str, content),
   )
@@ -800,7 +800,6 @@
     location,
     advisors,
     accent-color,
-    double-sided,
     if titlepage-style == auto { style } else { titlepage-style },
     font-size: font-titlepage-size,
     logo-type: logo,
@@ -1138,10 +1137,8 @@
     it
   }
 
-  if type(bibliography) == str {
-    bibliography-fn(bibliography, style: format)
-  } else {
-    bibliography
+  if bibliography-content != none {
+    bibliography-content
   }
 
   /* GLOSSARY */

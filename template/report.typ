@@ -18,7 +18,7 @@
   license: true,
   double-sided: true,
   flyleaf: true,
-  bibliography: "/references.bib",
+  bibliography-content: bibliography("references.bib", style: "ieee"),
   epigraph: (
     quote: [Cacaaaaaaaaaaaa.],
     author: "Uno que se cagaba",
