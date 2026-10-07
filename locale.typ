@@ -18,15 +18,11 @@
 
 #let CC-LICENSE = (
   es: [
-    Esta obra se encuentra sujeta a la licencia #link(
-      "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-    )[Creative Commons\ *Reconocimiento -- No Comercial -- Sin Derivadas* 4.0
+    Esta obra se encuentra sujeta a la licencia #link("https://creativecommons.org/licenses/by-nc-nd/4.0/")[Creative Commons\ *Reconocimiento -- No Comercial -- Sin Derivadas* 4.0
       International]
   ],
   en: [
-    This work is licensed under #link(
-      "https://creativecommons.org/licenses/by-nc-nd/4.0/",
-    )[Creative Commons\ *Attribution -- Non Commercial -- No Derivatives* 4.0
+    This work is licensed under #link("https://creativecommons.org/licenses/by-nc-nd/4.0/")[Creative Commons\ *Attribution -- Non Commercial -- No Derivatives* 4.0
       International]
   ],
 )
@@ -248,14 +244,10 @@
       answers: (
         yes: (
           es: [Sí, he usado estos datos con autorización de los interesados y
-            conforme a las instrucciones contenidas en la #link(
-              "https://docs.google.com/document/d/1YghVxFwo8a1VqdfnvJiZzlmAkfYepbDmD4g3hTOW9ro/edit?tab=t.0",
-            )[guía aprobada por la Universidad].],
+            conforme a las instrucciones contenidas en la #link("https://docs.google.com/document/d/1YghVxFwo8a1VqdfnvJiZzlmAkfYepbDmD4g3hTOW9ro/edit?tab=t.0")[guía aprobada por la Universidad].],
           en: [Yes, I have used this data with the authorization of the
             interested parties and in accordance with the instructions contained
-            in the #link(
-              "https://docs.google.com/document/d/1YghVxFwo8a1VqdfnvJiZzlmAkfYepbDmD4g3hTOW9ro/edit?pli=1&tab=t.0",
-            )[guide approved by the University].],
+            in the #link("https://docs.google.com/document/d/1YghVxFwo8a1VqdfnvJiZzlmAkfYepbDmD4g3hTOW9ro/edit?pli=1&tab=t.0")[guide approved by the University].],
         ),
         no: (
           es: [No, no he usado datos de carácter personal.],

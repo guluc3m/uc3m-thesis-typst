@@ -75,24 +75,14 @@
 )
 
 A #link("https://typst.app/")[Typst] template for bachelor/master theses at
-#link("https://uc3m.es")[Universidad Carlos III de Madrid], following #link(
-  "https://uc3m.libguides.com/en/TFG/writing",
-)[university guidelines].
+#link("https://uc3m.es")[Universidad Carlos III de Madrid], following #link("https://uc3m.libguides.com/en/TFG/writing")[university guidelines].
 
-The template is based on #link(
-  "https://github.com/ldcas-uc3m/thesis-template",
-)[ldcas-uc3m/thesis-template] and #link(
-  "https://github.com/JorgeyGari/clean-uc3m-typst-template",
-)[clean-uc3m] (a fork of #link(
-  "https://github.com/roland-KA/clean-dhbw-typst-template",
-)[clean-dhbw]).
+The template is based on #link("https://github.com/ldcas-uc3m/thesis-template")[ldcas-uc3m/thesis-template] and #link("https://github.com/JorgeyGari/clean-uc3m-typst-template")[clean-uc3m] (a fork of #link("https://github.com/roland-KA/clean-dhbw-typst-template")[clean-dhbw]).
 
 
 
 = Installation
-The recommended way to install it is through #link(
-  "https://typst.app/universe/",
-)[Typst Universe]. You can initialize a new project from the template with:
+The recommended way to install it is through #link("https://typst.app/universe/")[Typst Universe]. You can initialize a new project from the template with:
 ```shell
 typst init @preview/uc3m-thesis my-final-thesis
 ```
@@ -151,9 +141,7 @@ The `abstract` parameter takes a dictionary with the following keys:
   [The abstract text.],
   [`keywords`\*],
   [`array` of `str`],
-  [Between 2 and 5 keywords. For IEE, see #link(
-      "https://www.ieee.org/content/dam/ieee-org/ieee/web/org/pubs/ieee-taxonomy.pdf",
-    )[IEEE Taxonomy].],
+  [Between 2 and 5 keywords. For IEE, see #link("https://www.ieee.org/content/dam/ieee-org/ieee/web/org/pubs/ieee-taxonomy.pdf")[IEEE Taxonomy].],
 )
 
 ```typ
@@ -281,9 +269,7 @@ abbreviations: [
 
 == Glossary
 <sec:glossary>
-The template integrates with #link(
-  "https://typst.app/universe/package/glossarium/",
-)[`glossarium`] for automatic glossary and acronym management.
+The template integrates with #link("https://typst.app/universe/package/glossarium/")[`glossarium`] for automatic glossary and acronym management.
 
 Define your entries in a separate file (e.g. `config/glossary.typ`):
 
@@ -465,9 +451,7 @@ The template offers three visual styles, controlled by the `style` parameter.
 
 == `"fancy"` (default)
 
-An opinionated style inspired by the original #link(
-  "https://github.com/ldcas-uc3m/thesis-template",
-)[LaTeX template], with:
+An opinionated style inspired by the original #link("https://github.com/ldcas-uc3m/thesis-template")[LaTeX template], with:
 - Decorative chapter title pages with a horizontal rule and chapter number/name
   centered
 - Serif headers showing the current chapter name and page number
@@ -479,9 +463,7 @@ An opinionated style inspired by the original #link(
 
 == `"clean"`
 
-A clean, minimal style inspired by #link(
-  "https://github.com/roland-KA/clean-dhbw-typst-template",
-)[clean-dhbw], with:
+A clean, minimal style inspired by #link("https://github.com/roland-KA/clean-dhbw-typst-template")[clean-dhbw], with:
 - Large chapter number in the background on chapter pages
 - Simple running header showing the chapter name
 - Clean-style figure and table captions

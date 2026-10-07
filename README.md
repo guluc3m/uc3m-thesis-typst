@@ -47,7 +47,7 @@ just install
 ```
 Now the package is available with:
 ```typst
-#import "@local/uc3m-thesis:0.4.0": conf
+#import "@local/uc3m-thesis:1.0.0": conf
 ```
 
 #### Manual installation (for real)
@@ -56,11 +56,11 @@ Now the package is available with:
 > One-liner for lazy people:
 > - Linux:
 >    ```bash
->    mkdir my-final-thesis && cd my-final-thesis && git clone https://github.com/guluc3m/uc3m-thesis-typst.git --depth=1 && mv uc3m-thesis-typst/template/* . && rm -rf uc3m-thesis-typst/.git* uc3m-thesis-typst/template && sed -i 's%"@preview/uc3m-thesis:0.4.0"%"uc3m-thesis-typst/lib.typ"%' report.typ
+>    mkdir my-final-thesis && cd my-final-thesis && git clone https://github.com/guluc3m/uc3m-thesis-typst.git --depth=1 && mv uc3m-thesis-typst/template/* . && rm -rf uc3m-thesis-typst/.git* uc3m-thesis-typst/template && sed -i 's%"@preview/uc3m-thesis:1.0.0"%"uc3m-thesis-typst/lib.typ"%' report.typ
 >    ```
 > - MacOS:
 >    ```bash
->    mkdir my-final-thesis && cd my-final-thesis && git clone https://github.com/guluc3m/uc3m-thesis-typst.git --depth=1 && mv uc3m-thesis-typst/template/* . && rm -rf uc3m-thesis-typst/.git* uc3m-thesis-typst/template && sed -i '' 's%"@preview/uc3m-thesis:0.4.0"%"uc3m-thesis-typst/lib.typ"%' report.typ
+>    mkdir my-final-thesis && cd my-final-thesis && git clone https://github.com/guluc3m/uc3m-thesis-typst.git --depth=1 && mv uc3m-thesis-typst/template/* . && rm -rf uc3m-thesis-typst/.git* uc3m-thesis-typst/template && sed -i '' 's%"@preview/uc3m-thesis:1.0.0"%"uc3m-thesis-typst/lib.typ"%' report.typ
 >    ```
 
 1. Make a folder for your report.
@@ -69,7 +69,7 @@ Now the package is available with:
 4. Change the following line in `report.typ`:
    ```diff
    @@ -1,4 +1,4 @@
-   -#import "@preview/uc3m-thesis:0.4.0": conf
+   -#import "@preview/uc3m-thesis:1.0.0": conf
    +#import "uc3m-thesis-typst/lib.typ": conf
    ```
 5. [Optional, but recommended] Delete the `.git/`, `template/` folders and `typst.toml`, `.gitignore` files.

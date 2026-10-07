@@ -8,8 +8,8 @@ default:
 
 # generate manual
 doc:
-    typst compile docs/manual.typ docs/manual.pdf
-    typst compile docs/thumbnail.typ thumbnail.svg
+    # typst compile docs/manual.typ docs/manual.pdf
+    typst compile -f png --pages 1 --ppi 250 docs/thumbnail.typ thumbnail.png
 
 # # run test suite
 #   test *args:
