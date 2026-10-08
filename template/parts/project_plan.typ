@@ -1,6 +1,6 @@
 #import "@preview/gantty:0.5.1": gantt
 
-= Project Plan
+= Planificación
 
 #lorem(30)
 

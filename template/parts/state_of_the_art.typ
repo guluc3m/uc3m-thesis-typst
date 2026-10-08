@@ -1,3 +1,3 @@
-= State of the art
+= Estado de la cuestión
 
 #lorem(30)

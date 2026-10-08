@@ -1,2 +1,3 @@
-= Design
+= Diseño
+
 #lorem(30)

@@ -1,3 +1,3 @@
-= Conclusions
+= Conclusiones
 
 #lorem(30)
