@@ -41,14 +41,16 @@ This creates a `my-final-thesis/` directory with all the files needed to get sta
 
 #### Manual installation
 
-Install [Just](https://github.com/casey/just) and run:
+Clone the repository, install [Just](https://github.com/casey/just) and run:
 ```
 just install
 ```
-Now the package is available with:
-```typst
-#import "@local/uc3m-thesis:1.0.0": conf
+
+Now you can initialize the template with:
 ```
+typst init @local/uc3m-thesis my-final-thesis
+```
+
 
 ### Compilation
 

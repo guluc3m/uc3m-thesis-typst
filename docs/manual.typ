@@ -90,6 +90,18 @@ typst init @preview/uc3m-thesis my-final-thesis
 This creates a `my-final-thesis/` directory with all the files needed to get
 started.
 
+== Manual installation
+
+Clone #link("https://github.com/guluc3m/uc3m-thesis-typst")[the repository], install [Just](https://github.com/casey/just) and run:
+```
+just install
+```
+
+Now you can initialize the template with:
+```
+typst init @local/uc3m-thesis my-final-thesis
+```
+
 
 = Configuration
 
