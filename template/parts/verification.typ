@@ -1,3 +1,0 @@
-= Verification
-
-#lorem(30)

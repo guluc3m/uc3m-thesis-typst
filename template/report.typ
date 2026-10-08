@@ -74,14 +74,53 @@
 #include "parts/analysis.typ"
 #include "parts/design.typ"
 #include "parts/implementation.typ"
-#include "parts/verification.typ"
+#include "parts/evaluation.typ"
 #include "parts/project_plan.typ"
 #include "parts/conclusions.typ"
 
 
 /* Examples */
 
-#include "parts/graph_example.typ"
+
+// graph example
+
+#import "@preview/lilaq:0.6.0" as lq
+
+#let x = lq.linspace(0, 20)
+
+#grid(
+  columns: (1fr, 1fr),
+  gutter: 2cm,
+  align: center,
+  lq.diagram(
+    lq.plot(x, x => calc.sin(x + 0.541)),
+    width: 7cm,
+    height: 4cm,
+  ),
+  lq.diagram(
+    lq.plot(
+      (3, 6, 10, 16),
+      (5, 3, 4, 2),
+      mark: "o",
+      color: red,
+    ),
+  ),
+)
+
+
+#lq.diagram(
+  xaxis: (
+    ticks: ("Apples", "Bananas", "Kiwis", "Mangos", "Papayas")
+      .map(rotate.with(-45deg, reflow: true))
+      .map(align.with(right))
+      .enumerate(),
+    subticks: none,
+  ),
+  lq.bar(range(5), (5, 3, 4, 2, 1)),
+)
+
+
+// figure example
 
 #figure(
   image("img/logo_gul_uc3m.svg", width: 70%),
@@ -89,6 +128,9 @@
 ) <fig:logo>
 
 @fig:logo.
+
+
+// table example
 
 #let yes = sym.checkmark
 #figure(
@@ -113,9 +155,10 @@
 
 @tab:os.
 
+
 @sdg-un // bibliography reference
 
 // glossary
-#import "@preview/glossarium:0.5.9": gls, glspl
+#import "@preview/glossarium:0.5.10": gls, glspl
 #gls("API")
 
