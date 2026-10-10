@@ -23,7 +23,7 @@ In VS-Code with [Tynimist](https://marketplace.visualstudio.com/items?itemName=m
 ## How to check before release
 ```
 just install-preview
-typst init @preview/uc3m-thesis:1.0.0 mitfg
+typst init @preview/fancy-uc3m-thesis:1.0.0 mitfg
 cd mitfg
 typst compile report.typ
 ```

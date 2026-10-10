@@ -34,7 +34,7 @@ For more in-depth information, check the [manual](docs/manual.pdf).
 You can initialize a new project from the template with:
 
 ```shell
-typst init @preview/uc3m-thesis my-final-thesis
+typst init @preview/fancy-uc3m-thesis my-final-thesis
 ```
 
 This creates a `my-final-thesis/` directory with all the files needed to get started.
@@ -48,7 +48,7 @@ just install
 
 Now you can initialize the template with:
 ```
-typst init @local/uc3m-thesis my-final-thesis
+typst init @local/fancy-uc3m-thesis my-final-thesis
 ```
 
 

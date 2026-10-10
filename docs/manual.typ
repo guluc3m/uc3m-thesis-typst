@@ -6,7 +6,7 @@
 #show: codly-init.with()
 
 #set document(
-  title: "uc3m-thesis — Documentation",
+  title: "fancy-uc3m-thesis — Documentation",
   author: "GUL UC3M",
 )
 
@@ -24,7 +24,7 @@
   header: context {
     if counter(page).get().first() > 1 {
       set text(size: 9pt, fill: luma(120))
-      [*uc3m-thesis* v#package_version]
+      [*fancy-uc3m-thesis* v#package_version]
       h(1fr)
       counter(page).display()
       v(-0.5em)
@@ -55,7 +55,7 @@
 
 
 #align(center)[
-  #text(size: 26pt, weight: "bold")[uc3m-thesis]
+  #text(size: 26pt, weight: "bold")[fancy-uc3m-thesis]
   \
   #text(size: 13pt, fill: luma(80))[Template Documentation — v#package_version]
   #v(0.4em)
@@ -84,7 +84,7 @@ The template is based on #link("https://github.com/ldcas-uc3m/thesis-template")[
 = Installation
 The recommended way to install it is through #link("https://typst.app/universe/")[Typst Universe]. You can initialize a new project from the template with:
 ```shell
-typst init @preview/uc3m-thesis my-final-thesis
+typst init @preview/fancy-uc3m-thesis my-final-thesis
 ```
 
 This creates a `my-final-thesis/` directory with all the files needed to get
@@ -99,7 +99,7 @@ just install
 
 Now you can initialize the template with:
 ```
-typst init @local/uc3m-thesis my-final-thesis
+typst init @local/fancy-uc3m-thesis my-final-thesis
 ```
 
 
@@ -111,7 +111,7 @@ with `#show: conf.with(...)`.
 == Minimal example
 
 ```typ
-#import "@preview/uc3m-thesis:0.4.0": conf
+#import "@preview/fancy-uc3m-thesis:0.4.0": conf
 
 #show: conf.with(
   title: "My Bachelor Thesis",
@@ -318,7 +318,7 @@ To reference a glossary term in the body text, use `#gls("key")` (singular) or
 after the `#show: conf.with(...)` call:
 
 ```typ
-#import "@preview/uc3m-thesis:0.4.0": conf
+#import "@preview/fancy-uc3m-thesis:0.4.0": conf
 #import "@preview/glossarium:0.5.9": gls, glspl
 
 // In the body:
