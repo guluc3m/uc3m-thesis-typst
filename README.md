@@ -73,6 +73,19 @@ You can also use an IDE extension to preview and compile:
 - [GNU Emacs](https://www.gnu.org/software/emacs/): [typst-preview.el](https://github.com/havarddj/typst-preview.el)
 
 
+## Disclaimer and university affiliation
+
+This repository contains an unofficial thesis template intended to support academic writing and research.
+
+**This template is an independent, community-created project. It is not an official Universidad Carlos III de Madrid (UC3M) publication, has not been approved, reviewed, sponsored, or endorsed by UC3M, and does not represent the university's official thesis formatting requirements.**
+
+The UC3M name, logos, and other university visual identifiers are included solely to facilitate the preparation of academic documents associated with the university. Their inclusion does not imply any institutional affiliation, authorization, or endorsement of this template.
+
+The university's name, logos, and visual identity remain subject to their respective rights and applicable terms. Use of this template does not grant permission to use UC3M trademarks or imply that such use is authorized by the university.
+
+For official requirements, users should consult the relevant UC3M regulations and guidelines.
+
+
 ## More information
 
 ### Typst resources
@@ -94,7 +107,6 @@ Here are some theses written using this template:
 - [A. Guerrero - Implementación en FPGA del procesador didáctico WepSIM](https://github.com/ALVAROPING1/TFM)
 - [J. A. Verde - Entorno para el modelado y simulación de sistemas electrónicos digitales](https://codeberg.org/joseaverde/TFM)
 
----
 
 ## Contributing
 
