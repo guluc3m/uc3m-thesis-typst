@@ -123,8 +123,8 @@
 // figure example
 
 #figure(
-  image("img/logo_gul_uc3m.svg", width: 70%),
-  caption: [El mejor logo de la UC3M, con diferencia],
+  image("img/Tux.svg", width: 30%),
+  caption: [Tux, la mascota de Linux],
 ) <fig:logo>
 
 @fig:logo.
