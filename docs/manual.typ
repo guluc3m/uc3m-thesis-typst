@@ -521,6 +521,15 @@ Both `"apa"` and `"ieee"` follow the university guidelines for APA/IEEE format, 
 }
 
 
+#set heading(numbering: none)
+
+#pagebreak()
+
+= Changelog
+
+== v1.0.1
+
+
 #pagebreak()
 
 = API Reference

@@ -1,6 +1,6 @@
 [package]
 name = "fancy-uc3m-thesis"
-version = "1.0.0"
+version = "1.0.1"
 entrypoint = "lib.typ"
 authors = [
     "GUL UC3M <info@gul.uc3m.es>",

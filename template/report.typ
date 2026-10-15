@@ -1,4 +1,4 @@
-#import "@preview/fancy-uc3m-thesis:1.0.0": conf
+#import "@preview/fancy-uc3m-thesis:1.0.1": conf
 #import "config/glossary.typ": glossary-entries
 #import "config/gen-ai.typ": genai-declaration
 
