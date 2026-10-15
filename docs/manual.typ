@@ -528,6 +528,7 @@ Both `"apa"` and `"ieee"` follow the university guidelines for APA/IEEE format, 
 = Changelog
 
 == v1.0.1
+- Improve title rendering in header for long titles
 
 
 #pagebreak()

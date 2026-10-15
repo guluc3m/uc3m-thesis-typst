@@ -721,48 +721,56 @@
 
     /* header */
     header: context {
-      if style == "strict" {
+      if (
+        style == "strict"
+          or (style == "clean" and in-appendix.get())
+          or (style == "fancy" and not in-body.get() or is-chapter-start())
+      ) {
         // no header
         return
       }
 
-      if (
-        (style == "clean" and not in-appendix.get())
-          or (style == "fancy" and in-body.get() and not is-chapter-start())
-      ) {
-        // show header
-        set text(accent-color)
-        if double-sided and calc.even(here().page()) {
-          counter(page).display()
-          h(1fr)
-          smallcaps({ if short-title != none { short-title } else { title } })
-        } else {
-          // chapter title
-          if style == "clean" {
-            // just name
-            hydra(
-              1,
-              display: (_, it) => {
-                // hydra should already do this... but alas...
-                if not is-chapter-start() {
-                  smallcaps(it.body)
-                }
-              },
-              use-last: true,
-              skip-starting: true,
-              book: double-sided,
-            )
-          } else if style == "fancy" {
-            // name and number
-            smallcaps([#locale.CHAPTER.at(language) #hydra(1)])
-          }
-          h(1fr)
-          counter(page).display("1") // arabic page numbers for the rest of the document
-        }
-
-        v(-0.6em)
-        line(length: 100%, stroke: 0.4pt + accent-color)
+      let even = calc.even(here().page())
+      let display-title = smallcaps({
+        if short-title != none { short-title } else { title }
+      })
+      let page-num = counter(page).display()
+      let chapter-title = if style == "clean" {
+        // just name
+        hydra(
+          1,
+          display: (_, it) => {
+            // hydra should already do this... but alas...
+            if not is-chapter-start() {
+              smallcaps(it.body)
+            }
+          },
+          use-last: true,
+          skip-starting: true,
+          book: double-sided,
+        )
+      } else if style == "fancy" {
+        // name and number
+        smallcaps([#locale.CHAPTER.at(language) #hydra(1)])
       }
+
+      set text(accent-color)
+      set par(justify: false)
+      grid(
+        columns: if double-sided and even { (1fr, 5fr) } else { (5fr, 1fr) },
+        align: (left, right),
+        row-gutter: 0.5em,
+        ..if not double-sided {
+          (chapter-title, page-num)
+        } else if even {
+          (page-num, display-title)
+        } else {
+          (chapter-title, page-num)
+        }
+      )
+
+      v(-0.6em)
+      line(length: 100%, stroke: 0.4pt + accent-color)
     },
 
     /* footer */

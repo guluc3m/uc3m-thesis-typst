@@ -6,7 +6,7 @@
 #show: conf.with(
   degree: "Grado en Ingeniería Typstática",
   title: "Análisis, diseño, e implementación del mejor Trabajo de Fin de Grado de la historia",
-  short-title: "La mejor Memoria de la Historia",
+  // short-title: "La mejor Memoria de la Historia",
   author: "Nombre Extremadamente Largo e Incómodo de Escribir",
   advisors: ("Profesor Cuyos Padres Tenían Visión de Futuro",),
   location: "Leganés, Madrid",
