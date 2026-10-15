@@ -10,21 +10,18 @@ The template is based on [ldcas-uc3m/thesis-template](https://github.com/ldcas-u
 ## Features
 
 - **Three visual styles**: `fancy` (default), `clean`, and `strict` (university-compliant)
-- **Easy to understand error messages**
+- Easy to understand error messages
 - **Bilingual**: Spanish (`es`) and English (`en`)
-- **Automatic front matter**: title page, abstract, acknowledgements, table of contents, list of figures/tables/listings, and abbreviations
-- **Back matter**: bibliography, glossary, appendixes, and the mandatory generative AI declaration
-- **APA or IEEE-style citations and figure/table captions** (or clean-style captions)
-- **Glossary and acronym support** via [`glossarium`](https://typst.app/universe/package/glossarium/)
-- **Chapter-level numbering** for figures, tables, and equations
-- **Double-sided layout** support
-- **PDF/A** compatible output
+- Support for mandatory generative AI declaration
+- APA or IEEE-style citations and figure/table captions (or clean-style captions)
+- Glossary and acronym support via [`glossarium`](https://typst.app/universe/package/glossarium/)
+- Double-sided layout support
 
 
 
 ## Usage
 
-For more in-depth information, check the [manual](docs/manual.pdf).
+For more in-depth information, and the changelog, check the [manual](docs/manual.pdf).
 
 
 ### Installation
@@ -83,7 +80,7 @@ The UC3M name, logos, and other university visual identifiers are included solel
 
 The university's name, logos, and visual identity remain subject to their respective rights and applicable terms. Use of this template does not grant permission to use UC3M trademarks or imply that such use is authorized by the university.
 
-For official requirements, users should consult the relevant UC3M regulations and guidelines.
+For official requirements, users should consult the relevant UC3M regulations and guidelines ([TFG](https://uc3m.libguides.com/en/TFG/writing), [TFM](https://uc3m.libguides.com/en/MFP/writing)).
 
 
 ## More information
