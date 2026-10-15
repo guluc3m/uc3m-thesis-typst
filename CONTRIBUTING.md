@@ -20,10 +20,18 @@ In VS-Code with [Tynimist](https://marketplace.visualstudio.com/items?itemName=m
 }
 ```
 
-## How to check before release
-```
-just install-preview
-typst init @preview/fancy-uc3m-thesis:1.0.0 mitfg
-cd mitfg
-typst compile report.typ
-```
+
+## Before release
+1. Ensure you've updated the package version inside `typst.toml`. It must follow the conventions in [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html).
+2. Update the changelog in `docs/manual.typ`
+3. Test the package locally:
+  ```
+  just install-preview
+  typst init @preview/fancy-uc3m-thesis mythesis
+  cd mythesis
+  typst compile report.typ
+  ```
+4. Compile the documentation:
+   ```
+   just doc
+   ```
