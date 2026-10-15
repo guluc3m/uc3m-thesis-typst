@@ -757,7 +757,7 @@
       set text(accent-color)
       set par(justify: false)
       grid(
-        columns: if double-sided and even { (1fr, 5fr) } else { (5fr, 1fr) },
+        columns: if double-sided and even { (1fr, 12fr) } else { (12fr, 1fr) },
         align: (left, right),
         row-gutter: 0.5em,
         ..if not double-sided {
